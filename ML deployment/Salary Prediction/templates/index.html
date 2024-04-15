@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Prediction</title>
+</head>
+<body>
+    <h1>Predict a Salary (in USD) </h1>
+    
+    <form action="{{url_for('predict')}}" method="post">
+    <p>Please select your model:</p>
+        <input type="radio" name="model" value="LinearRegression">
+        <label for="Linear regression">Linear regression</label><br>
+        
+        <input type="radio" name="model" value="PolynomialRegression">
+        <label for="Polynominal regression">Polynominal regression</label><br>
+        
+        
+        <label for="Position">Position:</label>
+        <input type="text" id="Position" name="Position" required>
+        <button type="submit">Predict</button>
+    </form>
+    
+        
+
+    <h4> {{Prediction_text}}</h4>
+</body>
+</html>
