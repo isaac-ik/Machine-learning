@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Churn Prediction Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .container img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto; /* Center the image horizontally */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            margin-left: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Churn Prediction using Artificial Neural Networks</h1>
+
+        <div class="section">
+            <p>In today's highly competitive business environment, customer churn is a critical issue for companies across industries. Identifying customers who are likely to churn and implementing proactive retention strategies can significantly impact business performance. In this project, I developed a <b>customer churn prediction model</b> using Artificial Neural Networks (ANN) to help a fictional bank reduce customer attrition.</p>
+        </div>
+
+        <div class="section">
+            <h2>Data Preparation and Preprocessing</h2>
+            <p>The dataset used for this project is the Churn Modelling dataset, which contains information about bank customers, including their demographics, account details, and churn status. I preprocessed the data by encoding categorical variables using LabelEncoder and OneHotEncoder, and standardized numerical variables using StandardScaler. You can download the dataset <a href="https://raw.githubusercontent.com/isaac-ik/Machine-learning/main/Churn_Modelling.csv">here</a>.</p>
+        </div>
+
+        <div class="container img">
+            <h4>Dataset</h4>
+            <img src="https://github.com/isaac-ik/Machine-learning/blob/main/ML%20deployment/Dataseet.png?raw=true" alt="Image">
+        </div>
+
+        <div class="section">
+            <h2>Sample Code Snippet</h2>
+            <pre><code class="language-python"># Importing necessary libraries
+import numpy as np
+import pandas as pd 
+
+# Extracting features and target variable
+X = customer_data.iloc[:, 3:-1].values
+y = customer_data.iloc[:, -1].values
+
+# Encoding categorical variables
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+X[:, 2] = le.fit_transform(X[:, 2])
+
+# One-hot encoding
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [1])], remainder='passthrough')
+X = np.array(ct.fit_transform(X))</code></pre>
+        </div>
+
+
+        <div class="section">
+            <h2>Model Development</h2>
+            <p>I used TensorFlow and Keras to build the ANN model, consisting of an input layer, two hidden layers with ReLU activation functions, and an output layer with a sigmoid activation function. The model was compiled using the Adam optimizer and binary crossentropy loss function, and trained on the preprocessed dataset for 100 epochs.</p>
+        </div>
+        <h3>Code Snippet</h3>
+        <pre><code class="language-python">#creates a sequential model
+ann = tf.keras.models.Sequential()
+# input layer and first hidden layer
+ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
+# second layer
+ann.add(tf.keras.layers.Dense(units=6, activation='relu'))
+# output layer
+ann.add(tf.keras.layers.Dense(units=1, activation='sigmoid'))
+ann.compile(optimizer= 'adam' , loss = 'binary_crossentropy', metrics = ['accuracy'])
+
+# Train the model
+ann.fit(X_train, y_train, batch_size=32, epochs=100)</code></pre>
+        
+        <div class="container img">
+            <h4>Model in Training</h4>
+            <img src="https://github.com/isaac-ik/Machine-learning/blob/main/ML%20deployment/Screenshot%202024-05-09%20084920.png?raw=true" alt="Image">
+        </div>
+
+
+        <div class="section">
+            <h2>Model Evaluation and Prediction</h2>
+            <p>The trained model achieved a satisfactory accuracy of ~85.7% on the test set, indicating its ability to predict customer churn. I used the model to predict the churn probability for a new customer, demonstrating its practical application in identifying at-risk customers.</p>
+        <div class="container img">
+            <h4>Model Evaluation</h4>
+            <img src="https://github.com/isaac-ik/Machine-learning/blob/main/ML%20deployment/Screenshot%202024-05-09%20085012.png?raw=true" alt="Image">
+        </div>
+        </div>
+
+        <div class="section">
+            <h2>Business Impact</h2>
+            <p>By leveraging this model, businesses can proactively identify customers at risk of churn and implement targeted retention strategies to improve customer retention and ultimately, business profitability.</p>
+        </div>
+
+        <div class="section">
+            <h2>Future Steps</h2>
+            <p>Further refinement of the model by tuning hyperparameters and exploring additional features could potentially enhance its predictive performance. Deployment of the model in a production environment to enable real-time churn prediction and intervention. Full code is <a href="https://raw.githubusercontent.com/isaac-ik/Machine-learning/main/Bank%20Customer%20Churning%20prediction.ipynb">here</a></p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+</body>
+</html>
