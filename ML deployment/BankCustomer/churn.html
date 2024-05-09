@@ -65,11 +65,34 @@
 
         <div class="section">
             <p>In today's highly competitive business environment, customer churn is a critical issue for companies across industries. Identifying customers who are likely to churn and implementing proactive retention strategies can significantly impact business performance. In this project, I developed a <b>customer churn prediction model</b> using Artificial Neural Networks (ANN) to help a fictional bank reduce customer attrition.</p>
+
+            <h4>Business Question</h4>
+            <p>How can we proactively identify customers who are likely to churn?</p>
         </div>
 
         <div class="section">
             <h2>Data Preparation and Preprocessing</h2>
             <p>The dataset used for this project is the Churn Modelling dataset, which contains information about bank customers, including their demographics, account details, and churn status. I preprocessed the data by encoding categorical variables using LabelEncoder and OneHotEncoder, and standardized numerical variables using StandardScaler. You can download the dataset <a href="https://raw.githubusercontent.com/isaac-ik/Machine-learning/main/Churn_Modelling.csv">here</a>.</p>
+        </div>
+
+        <div class="section">
+        <h4>Understanding the Data</h4>
+            <p>In this dataset, each row represents a customer and each column represents a different attribute. Here's a brief explanation of each attribute:</p>
+            <ul>
+                <li><strong>CustomerID:</strong> Unique identifier for each customer.</li>
+                <li><strong>Surname:</strong> Customer's last name.</li>
+                <li><strong>CreditScore:</strong> A numerical value representing the credit score of the customer.</li>
+                <li><strong>Geography:</strong> The country where the customer is located.</li>
+                <li><strong>Gender:</strong> Customer's gender (male or female).</li>
+                <li><strong>Age:</strong> Customer's age.</li>
+                <li><strong>Tenure:</strong> Number of years the customer has been with the bank.</li>
+                <li><strong>Balance:</strong> Customer's account balance.</li>
+                <li><strong>NumOfProducts:</strong> Number of bank products the customer uses.</li>
+                <li><strong>HasCrCard:</strong> Whether the customer has a credit card (1 = yes, 0 = no).</li>
+                <li><strong>IsActiveMember:</strong> Whether the customer is an active member of the bank (1 = yes, 0 = no).</li>
+                <li><strong>EstimatedSalary:</strong> Estimated salary of the customer.</li>
+                <li><strong>Exited:</strong> Whether the customer has churned (1 = yes, 0 = no).</li>
+            </ul>
         </div>
 
         <div class="container img">
