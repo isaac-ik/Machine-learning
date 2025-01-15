@@ -27,7 +27,7 @@ This section includes projects showcasing model deployment using Flask web appli
     -   `models/` - Trained models saved for deployment.
 
     -   `templates/` - HTML templates for the web application.
-
+<img width="928" alt="club comparison visualization" src="https://github.com/isaac-ik/Machine-learning/blob/main/ML%20deployment/Wine%20Quality/Screenshot%202025-01-15%20152455.png" />
 #### b. Salary Prediction
 
 -   **Dataset:** `Position_Salaries.csv`
